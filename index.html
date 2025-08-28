@@ -17,11 +17,11 @@
   </head>
   <body>
     <header>
-      <nav class="flex place-content-between items-center m-15 mb-[25px]">
+      <nav class="flex md:flex-row flex-col place-content-between items-center m-15 mb-[25px] gap-y-4">
         <div class="left-header flex gap-3">
           <img class="w-[50px]" src="assets/logo.png" alt="logo" />
           <h3 class="font-bold text-[#006747]">Emergency <br> Service</h3>
-        </div>
+        </div> 
         <div class="right-header flex place-content-between gap-10">
           <button class="flex items-center justify-center gap-3 w-[127px] bg-[#ECFFF0] p-[8px] rounded-[50px]">
             <p id="count" class="text-[black]">0</p>
@@ -32,11 +32,11 @@
             <img class="w-8" src="assets/coin.png" alt="" />
           </button>
           <button class="bg-[green] w-[127px] p-[8px] rounded-[50px]">
-            <p class="text-[white]">2 Copy</p>
+            <p id="copy-count" class="text-[white]">0</p>Copy
           </button>
         </div>
       </nav>
-      <div class="banner-section flex justify-center items-center w-full bg-[green] p-10">
+      <div class="banner-section flex justify-center items-center w-full bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223]  p-10">
        <div class="flex flex-col items-center justify-center">
          <img class="w-[92px]" src="assets/logo.png" alt="">
         <h2 class="font-bold text-[30px] text-[white] mb-3">Emergency Service Directory</h2>
@@ -44,14 +44,14 @@
        </div>
       </div>
     </header>
-    <div class="card-section flex">
-      <div id="card-container" class="card-container gap-5 p-8 grid grid-cols-3 w-9/12">
+    <div class="card-section flex bg-[#F5FFF6] flex-col md:flex-row ">
+      <div id="card-container" class="card-container gap-8 p-8 grid grid-cols-1 md:grid-cols-3  md:w-9/12 w-full ">
    
       </div>
-      <div class="call-history  w-3/12 bg-[#FAFAFA] mt-8 ">
+      <div class="call-history w-full md:w-3/12 bg-[#FAFAFA] mt-8 shadow p-6 ">
         <div class="flex place-content-between items-center p-5">
           <h2  class="font-bold"><i class="fa-solid fa-business-time"></i> Call History</h2>
-          <button class="bg-[green] w-[127px] p-[8px] rounded-[50px]">Clear</button>
+          <button onclick="handleHistoryClear()" class="bg-[green] w-[127px] p-[8px] rounded-[50px]">Clear</button>
         </div>
         <div id="call-history-container">
 

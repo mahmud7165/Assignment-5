@@ -78,11 +78,13 @@ function showCards() {
     const card = document.createElement("div");
     card.classList.add(
       "card",
-      "w-[310px]",
+      "md:w-[310px]",
+      "w-full",
+      "mx-auto",
+      "max-w-[430px]",
       "bg-[#FFFFFF]",
       "p-[15px]",
-      "shadow-lg",
-      "shadow-gray-500/50"
+      "shadow"
     );
     card.innerHTML = `
         
@@ -97,7 +99,7 @@ function showCards() {
           <button class="mb-4 bg-[#F2F2F2] px-4 rounded-[50px]">All</button>
           </div>
           <div class="grid grid-cols-2 w-full gap-2 mt-2">
-            <button class="border-1 border-gray-400 rounded-[8px]"><i class="fa-solid fa-copy"></i>Copy</button>
+            <button onclick="handleCopyCount(${item.id})" class="border-1 border-gray-400 rounded-[8px]"><i class="fa-solid fa-copy"></i>Copy</button>
             <button onclick="handleCall(${item.id})" class="call-btn bg-green-500 rounded-[8px]"><i class="fa-solid fa-phone"></i>Call</button>
           </div>
         
@@ -118,7 +120,7 @@ function handleCount() {
 // handleCount();
 // console.log(heartBtn);
 // start call btn function
-const historyItems = [];
+let historyItems = [];
 
 const coinDiv = document.getElementById("coin");
 function handleCall(id) {
@@ -143,7 +145,7 @@ function showCallHistory() {
   historyItems.forEach((item) => {
     const historyCard = document.createElement("div");
     historyCard.innerHTML = `
-     <div class="time-section flex place-content-between p-5">
+     <div class="time-section flex place-content-between p-5 shadow mb-4 bg-[#FAFAFA]">
             <div>
               <h5  class="font-bold">${item.title}</h5>
               <p>${item.helpline}</p>
@@ -154,4 +156,22 @@ function showCallHistory() {
 
     historyDiv.appendChild(historyCard);
   });
+}
+
+function handleHistoryClear() {
+  historyItems = [];
+  showCallHistory();
+}
+
+// copy counts function
+let copyCount = 0;
+const copyCountEl = document.getElementById("copy-count");
+function handleCopyCount(id) {
+  copyCount = +copyCountEl.textContent + 1;
+  copyCountEl.textContent = copyCount;
+  const item = cardItems.find((item) => item.id == id);
+  navigator.clipboard.writeText(item.helpline);
+  alert(`${item.title} coppied`);
+
+  console.log(id);
 }
