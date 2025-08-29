@@ -20,54 +20,54 @@ const cardItems = [
     title: "Fire Service Number",
     subTitle: "Fire Service ",
     helpline: 999,
-    category: "All",
-    icon_url: "emergency.png",
+    category: "Fire",
+    icon_url: "fire-service.png",
   },
   {
     id: 4,
-    title: "National Emergency Number",
-    subTitle: "National Emergency",
-    helpline: 109,
-    category: "All",
-    icon_url: "emergency.png",
+    title: "Ambulance Service",
+    subTitle: "Ambulance",
+    helpline: 1994 - 999999,
+    category: "Health",
+    icon_url: "ambulance.png",
   },
   {
     id: 5,
-    title: "National Emergency Number",
-    subTitle: "National Emergency",
-    helpline: 999,
+    title: "Women & Child Helpline",
+    subTitle: "Women & Child Helpline",
+    helpline: 109,
     category: "All",
     icon_url: "emergency.png",
   },
   {
     id: 6,
-    title: "National Emergency Number",
-    subTitle: "National Emergency",
-    helpline: 100999,
-    category: "All",
+    title: "Anti-Corruption Helpline",
+    subTitle: "Anti-Corruption",
+    helpline: 106,
+    category: "govt",
     icon_url: "emergency.png",
   },
   {
     id: 7,
-    title: "National Emergency Number",
-    subTitle: "National Emergency",
+    title: "Electricity Helpline",
+    subTitle: "Electricity Outage",
     helpline: 999,
-    category: "All",
+    category: "Electricity",
     icon_url: "emergency.png",
   },
   {
     id: 8,
-    title: "National Emergency Number",
-    subTitle: "National Emergency",
-    helpline: 109,
+    title: "Brac Helpline",
+    subTitle: "Brac",
+    helpline: 10999,
     icon_url: "emergency.png",
   },
   {
     id: 9,
-    title: "National Emergency Number",
-    subTitle: "National Emergency",
-    helpline: 999,
-    category: "All",
+    title: "Bangladesh Railway Helpline ",
+    subTitle: "Bangladesh Railway",
+    helpline: 163,
+    category: "Railway",
     icon_url: "emergency.png",
   },
 ];
@@ -100,7 +100,7 @@ function showCards() {
           </div>
           <div class="grid grid-cols-2 w-full gap-2 mt-2">
             <button onclick="handleCopyCount(${item.id})" class="border-1 border-gray-400 rounded-[8px]"><i class="fa-solid fa-copy"></i>Copy</button>
-            <button onclick="handleCall(${item.id})" class="call-btn bg-green-500 rounded-[8px]"><i class="fa-solid fa-phone"></i>Call</button>
+            <button onclick="handleCall(${item.id})" class="text-[white] call-btn bg-green-500 rounded-[8px]"><i class="fa-solid fa-phone"></i>Call</button>
           </div>
         
     `;
